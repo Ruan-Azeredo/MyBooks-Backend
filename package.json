@@ -1,0 +1,22 @@
+{
+  "name": "back-mybooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ruan-Azeredo/MyBooks-Backend.git"
+  },
+  "keywords": [
+    "gitalive36"
+  ],
+  "author": "Ruan Azeredo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ruan-Azeredo/MyBooks-Backend/issues"
+  },
+  "homepage": "https://github.com/Ruan-Azeredo/MyBooks-Backend#readme"
+}
