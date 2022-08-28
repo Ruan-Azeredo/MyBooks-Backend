@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/Ruan-Azeredo/MyBooks-Backend/issues"
   },
-  "homepage": "https://github.com/Ruan-Azeredo/MyBooks-Backend#readme"
+  "homepage": "https://github.com/Ruan-Azeredo/MyBooks-Backend#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.4"
+  }
 }
