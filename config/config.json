@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "postgrespw",
-    "database": "database_development",
+    "database": "mybooks_development",
     "host": "127.0.0.1",
     "port": "49154",
     "dialect": "postgres"
