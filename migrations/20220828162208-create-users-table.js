@@ -6,7 +6,7 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        AutoIncrement: true,
+        autoIncrement: true,
         allowNull: false
       },
       name: {
@@ -36,12 +36,7 @@ module.exports = {
     })
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+  down: async (queryInterface, Sequelize) => {
+    return queryInterface.droptable('Users');
   }
 };
