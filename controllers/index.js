@@ -1,6 +1,6 @@
 const { request } = require('express');
-const userController = require('./userController');
+const usersController = require('./usersController');
 
 module.exports = {
-    users: userController,
+    users: usersController,
 };
