@@ -34,4 +34,14 @@ router.put('/:id', async (req, res) => {
     return res.json(updateuser)
 });
 
+router.get('/alreadyregistered/:email', async (req, res) => {
+    const user = await User.findAll({ where: { email: req.params.email } })
+    console.log(user.email)
+    if (user[0] == null) {
+        return res.status(400).json({ error: 'usuario com este email ainda não existe'})
+    } else {
+        return res.json(user)
+    }
+})
+
 module.exports = router;
