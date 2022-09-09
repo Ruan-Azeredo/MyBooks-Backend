@@ -38,7 +38,7 @@ router.get('/alreadyregistered/:email', async (req, res) => {
     const user = await User.findAll({ where: { email: req.params.email } })
     console.log(user.email)
     if (user[0] == null) {
-        return res.status(400).json({ error: 'usuario com este email ainda não existe'})
+        return res.json('email não cadastrado')
     } else {
         return res.json(user)
     }
