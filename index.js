@@ -11,6 +11,7 @@ app.use(cors())
 app.use('/users', controllers.users)
 app.use('/users/writers', controllers.writers)
 app.use('/users/books', controllers.books)
+app.use('/users/reviews', controllers.reviews)
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
