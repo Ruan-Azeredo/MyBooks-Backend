@@ -31,8 +31,8 @@ router.get('/:user_id/:writer_id', async (req, res) => {
 //todos os livros
 router.get('/:user_id', async (req, res) => {
     const allwriters = await Writer.findAll({ where: { user_id: req.params.user_id } })
-    const books = await Book.findAll({ where: { writer_id: allwriters.map(all => all.id) } })
-    /// allwriters.map(all => all.id) -> percorre os escritorres deste usuario e retorna seus ids / ex: [10, 16, 24]
+    const books = await Book.findAll({ where: { writer_id: allwriters.map(key => key.id) } })
+    /// allwriters.map(key => key.id) -> percorre os escritorres deste usuario e retorna seus ids / ex: [10, 16, 24]
 
     return res.json(books)
 })
