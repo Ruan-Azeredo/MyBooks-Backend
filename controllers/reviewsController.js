@@ -38,18 +38,18 @@ router.post('/:user_id/:writer_id/:book_id', async (req, res) => {
     return res.json(review)
 })
 
-router.delete('/:user_id/:writer_id/:book_id/:id'), async (req, res) => {
+router.delete('/:user_id/:writer_id/:book_id/:id', async (req, res) => {
     await Review.destroy({ where: { id: req.params.id } })
     return res.json(`Resenha de id = ${req.params.id} deletado`)
-}
+})
 
-router.put('/:user_id/:writer_id/:book_id/:id'), async (req, res) => {
+router.put('/:user_id/:writer_id/:book_id/:id', async (req, res) => {
     const { text } = req.body
     await Review.update(
         { text }, { where: { id: req.params.id } }
     )
     const updatedreview = await Review.findByPk(req.params.id)
     return res.json(updatedreview)
-}
+})
 
 module.exports = router
