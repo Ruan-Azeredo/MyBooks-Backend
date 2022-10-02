@@ -1,11 +1,30 @@
+
 const { Router } = require('express')
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 const { User, Writer, Book } = require('../models')
+
+const storage = {
+    dest: 'uploads/',
+    storage: multer.diskStorage({
+        destination: function (req, file, cb) {
+
+            cb(null, 'uploads/')
+        },
+        filename: function (req, file, cb) {
+
+            cb(null, `${file.originalname}`)
+        }
+    })
+}
 
 const router = Router()
 
-router.post('/:user_id/:writer_id', async (req, res) => {
+router.post('/:user_id/:writer_id/:title', multer(storage).single('cover'), async (req, res) => {
     const writer_id = req.params.writer_id
-    const { title, cover } = req.body
+    const title = req.params.title
+    const { originalname: name, size, location: url = "uploads/" + name} = req.file;
+    const key = 27
 
     const writer = await Writer.findByPk(writer_id)
     if (!writer) {
@@ -14,7 +33,10 @@ router.post('/:user_id/:writer_id', async (req, res) => {
 
     const book = await Book.create({
         title,
-        cover,
+        name,
+        size,
+        key,
+        url,
         writer_id
     })
 

@@ -20,7 +20,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      cover: {
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      size: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      key: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      url: {
         type: Sequelize.STRING,
         allowNull: false
       },
