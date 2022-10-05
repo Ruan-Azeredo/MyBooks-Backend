@@ -2,8 +2,6 @@ const Book = (sequelize, DataTypes) => {
     return sequelize.define('Book', {
         title: DataTypes.STRING,
         name: DataTypes.STRING,
-        size: DataTypes.INTEGER,
-        key: DataTypes.STRING,
         url: DataTypes.STRING,
         writer_id: {
             type: DataTypes.INTEGER,
