@@ -79,18 +79,17 @@ router.put('/:user_id/:writer_id/:id/:title/:name', multer(storage).single('cove
     const name = name_
     const url = url_
 
+    const updatedBook = null
 
     if (title == 'undefined') {
-        const updatedBook = await Book.update(
+        await Book.update(
             { writer_id, name, url }, { where: { id: req.params.id }}
         )
     } else {
-        const updatedBook = await Book.update(
+        await Book.update(
             { title, writer_id, name, url }, { where: { id: req.params.id }}
         )
     }
-
-    return res.json(updatedBook)
 });
 
 //todos os livros de um escritor
